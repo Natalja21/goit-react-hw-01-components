@@ -1,26 +1,30 @@
 import PropTypes from 'prop-types';
+import css from './Profile.module.css';
+
+
+
 const Profile = ({ avatar, username, tag, location, stats }) => {
   return (
-    <div>
-      <div>
-        <img src={avatar} alt="user avatar" className="avatar" />
-        <p>{username}</p>
-        <p>{tag}</p>
-        <p>{location}</p>
+    <div className={css.profile}>
+      <div className={css.description}>
+        <img src={avatar} alt="user avatar" className={css.avatar}/>
+        <p className={css.name }>{username}</p>
+        <p className={css.tag}>{tag}</p>
+        <p className={css.location}>{location}</p>
       </div>
 
-      <ul>
+      <ul className={css.stats}>
         <li>
-          <span>Followers</span>
-          <span>{stats.followers}</span>
+          <span className={css.label}>Followers</span>
+          <span className={css.quantity}>{stats.followers}</span>
         </li>
         <li>
-          <span>Views</span>
-          <span>{stats.views}</span>
+          <span className={css.label}>Views</span>
+          <span className={css.quantity}>{stats.views}</span>
         </li>
         <li>
-          <span>Likes</span>
-          <span>{stats.likes}</span>
+          <span className={css.label}>Likes</span>
+          <span className={css.quantity}>{stats.likes}</span>
         </li>
       </ul>
     </div>
@@ -28,14 +32,14 @@ const Profile = ({ avatar, username, tag, location, stats }) => {
 };
 
 Profile.prototype = {
-  avatar: PropTypes.string,
-  username: PropTypes.string,
-  tag: PropTypes.string,
-  location: PropTypes.string,
+  avatar: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
   stats: {
-    followers: PropTypes.number,
-    views: PropTypes.number,
-    likes: PropTypes.number,
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired,
   },
 };
 export default Profile;
