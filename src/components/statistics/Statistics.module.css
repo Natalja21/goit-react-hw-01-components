@@ -1,7 +1,6 @@
 .statistics {
     width: 335px;
     margin: auto;
-    border: solid 1px rgb(211, 221, 221);
 }
 
 .title {
@@ -23,14 +22,6 @@
     border: solid 1px #000;
  
 }
-.item:nth-child(even) {
-    background-color: gray;
-}
-
-.item:nth-child(odd) {
-    background-color: #fff;
-}
-
 .label {
     margin-top: 5px;
     margin-bottom: 5px;
